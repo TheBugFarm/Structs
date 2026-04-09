@@ -1,15 +1,21 @@
-struct User {
-    first_name: String,
-    last_name: String,
-    age: u32,
+struct rect {
+    width: u32,
+    height: u32,
+}
+impl rect {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+    fn perimeter(&self)-> u32 {
+        2 * (self.width + self.height)
+    }
 }
 fn main() {
-    let user = User {
-        first_name: String::from("Navneet"),
-        last_name: String::from("S K"),
-        age: 32,
+    let rect1 = rect {
+        width: 50,
+        height: 40,
     };
-    println!("{}", user.first_name);
-    println!("{}", user.last_name);
-    println!("{}", user.age);
+    println!("{}", rect1.area());
+    println!("{}", rect1.perimeter());
+    // println!("{}", rect::debug());
 }
